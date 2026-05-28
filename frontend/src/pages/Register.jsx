@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ export default function Register() {
           username: formData.username,
         }),
       );
+      toast.success(data.message);
       navigate("/dashboard");
     } catch (error) {
       setError(`${error.message}`);
