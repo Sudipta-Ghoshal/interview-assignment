@@ -50,7 +50,7 @@ During installation:
 
 ## 4. Create `.env` File
 
-Inside backend folder create a `.env` file and pest the `MONGODB_URI and PORT`:
+Inside backend folder create a `.env` file and past the `MONGODB_URI and PORT`:
 
 ```
 MONGODB_URI=mongodb://localhost:27017/testUserDB
