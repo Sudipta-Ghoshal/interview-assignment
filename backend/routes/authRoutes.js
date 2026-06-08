@@ -10,7 +10,7 @@ router.post('/register', async (req, res) => {
     try {
         let { username, password } = req.body;
 
-        // Trim input
+        // Normalize input
         username = username?.trim().toLowerCase();
         password = password?.trim();
 
@@ -75,10 +75,14 @@ router.post('/register', async (req, res) => {
 // 2. Login Route
 router.post('/login', async (req, res) => {
     try {
-        const { username, password } = req.body;
+        let { username, password } = req.body;
+
+        // Normalize input
+        username = username?.trim().toLowerCase();
+        password = password?.trim();
 
         // Validate input
-        if (!username?.trim() || !password?.trim()) {
+        if (!username || !password) {
             return res.status(400).json({
                 message: 'Username and password are required'
             });

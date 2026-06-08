@@ -21,9 +21,8 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-
     setError("");
+    setLoading(true);
 
     try {
       const response = await fetch("http://localhost:5000/api/login", {
@@ -81,7 +80,8 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition"
+            className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+            disabled={loading}
           >
             {loading ? "Logging in..." : "Login"}
           </button>

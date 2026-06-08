@@ -17,7 +17,7 @@ export default function Dashboard() {
         {/* Profile Circle */}
         <div className="flex justify-center mb-6">
           <div className="w-24 h-24 rounded-full bg-linear-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-            {user.username.charAt(0).toUpperCase()}
+            {user?.username?.charAt(0).toUpperCase()}
           </div>
         </div>
 
@@ -28,7 +28,9 @@ export default function Dashboard() {
 
         <p className="text-gray-500 text-center mt-2 mb-8">
           Hello,{" "}
-          <span className="font-semibold text-gray-700">{user.username}</span>
+          <span className="font-semibold text-gray-700">
+            {user?.username?.charAt(0).toUpperCase() + user?.username?.slice(1)}
+          </span>
         </p>
 
         {/* Dashboard Card */}
